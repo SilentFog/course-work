@@ -1,7 +1,7 @@
 /* Global */
 /* ------------------------------------ */
 @import "global/_variables";
-@import "global/_fonts";
+@import "global/fonts";
 @import "global/_reboot";
 @import "global/_container";
 @import "global/_visually-hidden";
@@ -9,3 +9,4 @@
 
 /* Blocks */
 /* ------------------------------------ */
+@import "blocks/background";
