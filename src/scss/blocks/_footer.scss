@@ -1,0 +1,38 @@
+.footer {
+    padding-top: 50px;
+
+    &__content {
+        padding: 41px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid $color-gray-lighter;
+    }
+
+    &__nav-list {
+        display: flex;
+        gap: 70px;
+    }
+
+    &__nav-item {
+        color: $color-text-white;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    &__bottom {
+        padding: 57px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__copyright {
+        color: $color-text-white;
+
+    }
+
+    &__social {
+        display: flex;
+        gap: 70px;
+    }
+
+}

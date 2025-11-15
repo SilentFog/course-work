@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px 20px;
+    height: 60px;
+
+    &__control {
+        display: flex;
+        align-items: center;
+        border: 1px solid $color-border;
+        background-color: $color-bg-button-search;
+        border-radius: 15px;
+        padding: 0px 16px;
+        gap: 12px;
+        height: 50px;
+        padding: 0 16px;
+        gap: 12px;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+        margin: 0 30px;
+    }
+
+    &__search-input {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        background: transparent;
+        flex: 1;
+    }
+
+    &__dot {
+        width: 13px;
+        height: 13px;
+        background-color: $color-teal;
+        border-radius: 50%;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__enter {
+        cursor: pointer;
+        padding: 14px 32px;
+        gap: 13px;
+    }
+
+    &__basket {
+        cursor: pointer;
+        padding: 17px 19px;
+    }
+
+    &__control-text {
+        color: $color-text-filter;
+    }
+}
