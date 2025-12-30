@@ -1,0 +1,47 @@
+.profile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #F9F9F9;
+    border: 1px solid #66A5AD;
+    border-radius: 15px;
+    padding: 10px 0;
+    margin-top: 10px;
+    list-style: none;
+
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 20;
+
+    li {
+        &:not(:last-child) a {
+            border-bottom: 1px solid #66A5AD;
+            padding-bottom: 10px;
+        }
+
+        a {
+            display: block;
+            padding: 12px 15px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #003B46;
+
+            &:hover {
+                background-color: #E8F3F5;
+                border-radius: 0 0 10px 10px;
+                border-bottom: 1px solid #66A5AD;
+            }
+        }
+    }
+
+    &.active,
+    .header__profile:hover & {
+        transform: scaleY(1);
+        opacity: 1;
+        visibility: visible;
+    }
+}

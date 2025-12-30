@@ -1,0 +1,111 @@
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+
+.filter {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    border-radius: 30px;
+    align-self: flex-start;
+
+    position: sticky;
+    top: 30px;
+
+    &__title,
+    &__subtitle {
+        font-weight: 600;
+        color: #003B46;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        font-size: 22px;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: 6px 10px;
+        border-radius: 10px;
+        transition: 0.2s;
+
+        &--active {
+            font-weight: 600;
+            background-color: #fff;
+            color: #003B46;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        &:hover:not(&--active) {
+            background-color: #E8F3F5;
+            color: #003B46;
+        }
+
+        &--more {
+            color: #66A5AD;
+        }
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &-inputs-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        &-input {
+            width: 100%;
+            padding: 6px 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        &-slider {
+            position: relative;
+            display: flex;
+
+            input[type="range"] {
+                width: 100%;
+            }
+        }
+    }
+
+    &__checkboxes {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    }
+
+    &__apply-btn {
+        padding: 10px;
+        border: none;
+        border-radius: 12px;
+        background-color: #66A5AD;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 600;
+    }
+}

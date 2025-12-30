@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="./js/header-cart2.js"></script>
+  <script type="module" src="src/main.js"></script>
   <title>course-work</title>
 </head>
 
@@ -11,72 +13,512 @@
   <div class="background">
     <div class="container">
       <header class="header">
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
           <svg class="logo-icon" width="41" height="36" aria-hidden="true">
             <use href="public/images/sprite.svg#logo-icon"></use>
           </svg>
-          <span class="logo__text">Logo</span>
+          <span class="logo__text">ITShop</span>
         </a>
-
         <div class="header__control header__search">
           <span class="header__dot"></span>
           <input class="header__search-input" type="text" placeholder="Розумний пошук..."
             aria-label="Розумний пошук...">
         </div>
-
         <div class="header__actions">
-          <a href="#" class="header__control header__enter">
-            <svg class="human-icon" width="13" height="14" aria-hidden="true">
+          <!-- Кнопка входу -->
+          <a href="#" id="btn-login" class="header__control header__control--enter">
+            <svg class="human-icon" width="13" height="14">
               <use href="public/images/sprite.svg#human-icon"></use>
             </svg>
             <span class="header__control-text">Увійти</span>
           </a>
-
-          <a href="#" class="header__control header__basket">
-            <svg class="basket-icon" width="17" height="17" aria-hidden="true">
-              <use href="public/images/sprite.svg#basket-icon"></use>
+          <!-- Кнопка профілю (прихована) -->
+          <div id="btn-profile" class="header__control header__control--profile header__profile" style="display:none;">
+            <svg class="human-icon" width="13" height="14">
+              <use href="public/images/sprite.svg#human-icon"></use>
             </svg>
+            <span class="header__control-text"><a href="user-profile.html">Профіль</a></span>
+
+            <ul class="profile-menu">
+              <li><a href="#">Налаштування</a></li>
+              <li><a href="#">Замовлення</a></li>
+              <li><a href="#" id="btn-logout">Вийти</a></li>
+            </ul>
+          </div>
+          <!-- Кошик -->
+          <!-- Порожній кошик -->
+          <!-- Порожній кошик (видимий за замовчуванням) -->
+          <a href="#" class="header__control header__control--basket basket-empty open-cart">
+            <svg class="basket-icon" width="20" height="20">
+              <use href="public/images/symbol-defs.svg#basket-icon"></use>
+            </svg>
+          </a>
+          <!-- Повний кошик (прихований за замовчуванням) -->
+          <a href="#" class="header__control header__control--basket basket-full open-cart " style="display: none;">
+            <span class="basket__price">0 ₴</span>
+            <span class="basket__divider">|</span>
+            <svg class="basket-icon__header" width="20" height="20">
+              <use href="public/images/symbol-defs.svg#basket-icon"></use>
+            </svg>
+            <span class="basket__count">0</span>
           </a>
         </div>
       </header>
-
     </div>
     <main>
       <div class="container">
         <div class="slider">
-
           <h2 class="slider__title visually-hidden">Акции</h2>
-
           <ul class="slider__list">
-            
-            <li class="slider__slide slider__slide--placeholder"></li>
-            <li class="slider__slide slider__slide--1 slider__slide--active">
-              <span class="slider__text visually-hidden">Супер скидка 50%</span>
+            <li class="slider__slide slider__slide--1">
+              <a href="product-page.html?id=2">
+                <img src="public/images/Group_34441.png" alt="ARTLINE Gaming X55">
+                <span class="slider__text visually-hidden">Новинка месяца!</span>
+              </a>
             </li>
-
             <li class="slider__slide slider__slide--2">
-              <span class="slider__text visually-hidden">Новинка месяца!</span>
+              <a href="product-page.html?id=6">
+                <img src="public/images/Group_34440.png" alt="ARTLINE Gaming X80">
+                <span class="slider__text visually-hidden">Новинка месяца!</span>
+              </a>
             </li>
-
             <li class="slider__slide slider__slide--3">
-              <span class="slider__text visually-hidden">Бесплатная доставка</span>
+              <a href="product-page.html?id=1">
+                <img src="public/images/Group_34442.png" alt="ARTLINE Gaming X43">
+                <span class="slider__text visually-hidden">Новинка месяца!</span>
+              </a>
             </li>
           </ul>
-
           <div class="slider__nav">
-            <button class="slider__btn slider__btn--prev">&#10094;</button>
-            <button class="slider__btn slider__btn--next">&#10095;</button>
+            <button class="slider__btn slider__btn--prev">
+              <svg class="icon-small-arrow icon-small-arrow--left" width="20" height="20">
+                <use href="public/images/symbol-defs.svg#icon-small-arrow"></use>
+              </svg>
+            </button>
+            <button class="slider__btn slider__btn--next">
+              <svg class="icon-small-arrow" width="20" height="20">
+                <use href="public/images/symbol-defs.svg#icon-small-arrow"></use>
+              </svg></button>
           </div>
-
           <div class="slider__dots">
             <span class="slider__dot slider__dot--active"></span>
             <span class="slider__dot"></span>
             <span class="slider__dot"></span>
           </div>
-
         </div>
+        <div class="filter-sort">
+          <!-- Фільтр -->
+          <aside class="categories">
+            <h3 class="categories__title">Категорії:</h3>
+            <ul class="categories__list ">
+              <li class="categories__item ">Все</li>
+              <li class="categories__item categories__item--active">Ігрові ПК</li>
+              <li class="categories__item">Ноутбуки</li>
+              <li class="categories__item">Персональні комп’ютери</li>
+              <li class="categories__item">Комплектуючі</li>
+              <li class="categories__item">Монітори та периферія</li>
+              <li class="categories__item">Ще</li>
+            </ul>
+          </aside>
+          <!-- Сортування -->
+          <div class="sort sort--dropdown">
+            <span class="sort__label">Сортування:</span>
+            <ul class="sort__list">
+              <li class="sort__item sort__item--active">
+                Рейтингу
+                <ul class="sort__submenu">
+                  <li class="sort__item ">Ціні</li>
+                  <li class="sort__item">Новизні</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main-content">
+          <!-- Фильтр слева -->
+          <aside class="filter shadow-box">
+            <h3 class="filter__title">Фільтрування</h3>
+            <h4 class="filter__subtitle">Продавці:</h4>
+            <ul class="filter__list filter__checkboxes">
+              <li class="filter__item">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox-box"></span>
+                  <span>ITShop (<span class="brand-count">3089</span>)</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox-box"></span>
+                  <span>Інші продавці (<span class="brand-count">265</span>)</span>
+                </label>
+              </li>
+            </ul>
+            <div class="filter__price">
+              <span>Ціна від та до:</span>
+              <div class="filter__price-inputs-row">
+                <input type="number" class="filter__price-input" placeholder="0 ₴">
+                <input type="number" class="filter__price-input" placeholder="440152 ₴">
+              </div>
+              <div class="filter__price-slider">
+                <input type="range" class="price-slider-min" min="0" max="440152" value="0">
+                <input type="range" class="price-slider-max" min="0" max="440152" value="440152">
+              </div>
+            </div>
+            <h4 class="filter__subtitle">Популярні бренди:</h4>
+            <ul class="filter__list filter__checkboxes">
+              <li class="filter__item">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox-box"></span>
+                  <span>Acer (<span class="brand-count">3089</span>)</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox-box"></span>
+                  <span>AMD (<span class="brand-count">1</span>)</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox-box"></span>
+                  <span>ASUS (<span class="brand-count">4964</span>)</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox-box"></span>
+                  <span>Gigabyte (<span class="brand-count">2036</span>)</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox-box"></span>
+                  <span>Huawei (<span class="brand-count">31</span>)</span>
+                </label>
+              </li>
+              <li class="filter__item">
+                <label class="custom-checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox-box"></span>
+                  <span>Microsoft (<span class="brand-count">64</span>)</span>
+                </label>
+              </li>
+              <li class="filter__item filter__item--more">+ Показати все</li>
+            </ul>
+            <button class="filter__apply-btn">Застосувати</button>
+          </aside>
+          <!-- Карточки товаров справа -->
+          <section class="products">
+            <h2 class="visually-hidden">ТоварИ</h2>
+            <ul class="products__grid"></ul>
+            <button class="products__load-more">
+              <svg class="icon-update-product" width="40" height="40">
+                <use href="public/images/symbol-defs.svg#icon-update-product"></use>
+              </svg>
+              Показати ще
+            </button>
+            <div class="pagination">
+              <!-- disabled -->
+              <button class="btn btn--pagination btn--disabled">
+                <svg class="icon-small-arrow icon-small-arrow--left">
+                  <use href="public/images/symbol-defs.svg#icon-small-arrow"></use>
+                </svg>
+              </button>
+              <button class="btn btn--pagination">1</button>
+              <button class="btn btn--pagination">2</button>
+              <button class="btn btn--pagination">3</button>
+              <button class="btn btn--pagination">
+                <svg class="icon-small-arrow">
+                  <use href="public/images/symbol-defs.svg#icon-small-arrow"></use>
+                </svg>
+              </button>
+              <span class="pagination__info">1 із 65</span>
+            </div>
+          </section>
+        </div>
+        <!-- _____________форма для регистрации  ____________ -->
+        <div id="auth-overlay" class="auth-wrapper-overlay">
+          <div class="auth-popup">
+            <div class="auth auth--side">
+              <div class="auth-card auth-card--login active" data-target="login">
+                <button class="btn ">Вхід</button>
+              </div>
+              <div class="auth-card auth-card--register" data-target="register">
+                <button class="btn ">Реєстрація</button>
+              </div>
+            </div>
+            <!-- Универсальная форма -->
+            <form class="auth-form shadow-box">
+              <div class="auth-form__container">
+                <!-- Поля для логина -->
+                <div class="auth-form__fields  auth-form__fields--login">
+                  <label class="input-field">
+                    <fieldset class="input-field__fieldset">
+                      <legend class="input-field__legend">Логін</legend>
+                      <input class="input-field__input" type="text" id="username">
+                    </fieldset>
+                  </label>
+                  <label class="input-field">
+                    <fieldset class="input-field__fieldset">
+                      <legend class="input-field__legend">Пароль</legend>
+                      <input class="input-field__input" type="password" id="password">
+                    </fieldset>
+                  </label>
+                  <button type="submit" class="btn btn--full btn--rounded btn--primary">Увійти</button>
+                  <a href="#" class="auth-form__link">Забули логін чи пароль?</a>
+                </div>
+                <!-- Поля для регистрации -->
+                <div class="auth-form__fields auth-form__fields--register">
+                  <label class="input-field">
+                    <fieldset class="input-field__fieldset">
+                      <legend class="input-field__legend">Прізвище</legend>
+                      <input class="input-field__input" type="text" id="last-name">
+                    </fieldset>
+                  </label>
+                  <label class="input-field">
+                    <fieldset class="input-field__fieldset">
+                      <legend class="input-field__legend">Ім'я</legend>
+                      <input class="input-field__input" type="text" id="first-name">
+                    </fieldset>
+                  </label>
+                  <label class="input-field">
+                    <fieldset class="input-field__fieldset">
+                      <legend class="input-field__legend">Логін</legend>
+                      <input class="input-field__input" type="text" id="reg-username">
+                    </fieldset>
+                  </label>
+                  <label class="input-field">
+                    <fieldset class="input-field__fieldset">
+                      <legend class="input-field__legend">Пароль</legend>
+                      <input class="input-field__input" type="password" id="reg-password">
+                    </fieldset>
+                  </label>
+                  <label class="input-field">
+                    <fieldset class="input-field__fieldset">
+                      <legend class="input-field__legend">Телефон</legend>
+                      <input class="input-field__input" type="tel" id="phone" placeholder="+38 (XXX) XXX-XX-XX">
+                    </fieldset>
+                  </label>
+                  <label class="input-field">
+                    <fieldset class="input-field__fieldset">
+                      <legend class="input-field__legend">Email</legend>
+                      <input class="input-field__input" type="email" id="email">
+                    </fieldset>
+                  </label>
+                  <button type="submit" class="btn btn--full btn--rounded btn--primary btn--full">Продовжити</button>
+                  <label class="input-field">
+                    <label class="custom-checkbox">
+                      <input type="checkbox">
+                      <span class="checkbox-box"></span>
+                      <span> Згодний на обробку та передачу <a href="#">персональних даних</a></span>
+                    </label>
+                  </label>
+                </div>
+              </div>
+              <div class="auth-form__bottom">
+                <span>Увійти за допомогою: <img src="public/images/icon-google.png" alt=""> Google</span>
+              </div>
+            </form>
+          </div>
+          <!-- _____________форма для регистрации  ____________ -->
 
+          <!-- _____________начало формы для восстановления пароля____________ -->
+          <div class="login-help">
+            <div class="login-help__wrapper shadow-box">
+              <span class="login-help__title">Не можете увійти?</span>
+              <div class="login-help__controls">
+                <div>
+                  <div class="login-help__options">
+                    <label class="radio">
+                      <input type="radio" name="action" class="radio__input">
+                      <span class="radio__choice"></span>
+                      <span class="radio__label-text">Встановити новий пароль</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="action" class="radio__input">
+                      <span class="radio__choice"></span>
+                      <span class="radio__label-text">Відновити логін</span>
+                    </label>
+                  </div>
+                  <button class="btn btn--full btn--rounded btn--secondary btn--disabled">
+                    Продолжить
+                  </button>
+                </div>
+              </div>
+              <div class="login-help__icon-button">
+                <a href="#">
+                  <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_2_440)">
+                      <circle cx="42" cy="42" r="24" fill="white" />
+                    </g>
+                    <path
+                      d="M50.3333 41.1667H35.6783L40.0892 36.7559C40.1687 36.679 40.2322 36.587 40.2759 36.4854C40.3196 36.3837 40.3426 36.2743 40.3435 36.1637C40.3445 36.053 40.3234 35.9433 40.2815 35.8409C40.2396 35.7385 40.1777 35.6454 40.0995 35.5672C40.0212 35.489 39.9282 35.4271 39.8258 35.3852C39.7234 35.3433 39.6136 35.3222 39.503 35.3232C39.3923 35.3241 39.283 35.3471 39.1813 35.3908C39.0796 35.4345 38.9877 35.4979 38.9108 35.5775L33.0775 41.4109C32.9213 41.5671 32.8335 41.7791 32.8335 42C32.8335 42.221 32.9213 42.4329 33.0775 42.5892L38.9108 48.4225C39.068 48.5743 39.2785 48.6583 39.497 48.6564C39.7155 48.6545 39.9245 48.5669 40.079 48.4124C40.2335 48.2579 40.3211 48.0489 40.323 47.8304C40.3249 47.6119 40.2409 47.4014 40.0892 47.2442L35.6783 42.8334H50.3333C50.5543 42.8334 50.7663 42.7456 50.9226 42.5893C51.0789 42.433 51.1667 42.221 51.1667 42C51.1667 41.779 51.0789 41.5671 50.9226 41.4108C50.7663 41.2545 50.5543 41.1667 50.3333 41.1667Z"
+                      fill="#1E222E" />
+                    <defs>
+                      <filter id="filter0_d_2_440" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset dx="2" dy="2" />
+                        <feGaussianBlur stdDeviation="10" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix type="matrix"
+                          values="0 0 0 0 0.0646285 0 0 0 0 0.101353 0 0 0 0 0.231559 0 0 0 0.1 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_440" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_440" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- _____________востоновление пароля через почту____________ -->
+          <div class="password-reset shadow-box password" style="display: none;">
+            <div class="password-reset__wrapper padding">
+              <h2 class="password-reset__title">Відновлення пароля</h2>
 
+              <label class="password-reset__field input-field">
+                <fieldset class="input-field__fieldset">
+                  <legend class="input-field__legend">Email</legend>
+                  <input class="input-field__input" type="text">
+                </fieldset>
+              </label>
+              <p class="password-reset__text">
+                Введіть адресу електронної пошти, яку ви використовували при реєстрації.
+                Ми надішлемо вам листа зі посиланням для створення нового пароля.
+              </p>
+              <button class="btn btn--full btn--rounded btn--secondary btn--disabled">Надіслати посилання</button>
+              <div class="login-help__icon-button">
+                <a href="#">
+                  <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_2_440)">
+                      <circle cx="42" cy="42" r="24" fill="white" />
+                    </g>
+                    <path
+                      d="M50.3333 41.1667H35.6783L40.0892 36.7559C40.1687 36.679 40.2322 36.587 40.2759 36.4854C40.3196 36.3837 40.3426 36.2743 40.3435 36.1637C40.3445 36.053 40.3234 35.9433 40.2815 35.8409C40.2396 35.7385 40.1777 35.6454 40.0995 35.5672C40.0212 35.489 39.9282 35.4271 39.8258 35.3852C39.7234 35.3433 39.6136 35.3222 39.503 35.3232C39.3923 35.3241 39.283 35.3471 39.1813 35.3908C39.0796 35.4345 38.9877 35.4979 38.9108 35.5775L33.0775 41.4109C32.9213 41.5671 32.8335 41.7791 32.8335 42C32.8335 42.221 32.9213 42.4329 33.0775 42.5892L38.9108 48.4225C39.068 48.5743 39.2785 48.6583 39.497 48.6564C39.7155 48.6545 39.9245 48.5669 40.079 48.4124C40.2335 48.2579 40.3211 48.0489 40.323 47.8304C40.3249 47.6119 40.2409 47.4014 40.0892 47.2442L35.6783 42.8334H50.3333C50.5543 42.8334 50.7663 42.7456 50.9226 42.5893C51.0789 42.433 51.1667 42.221 51.1667 42C51.1667 41.779 51.0789 41.5671 50.9226 41.4108C50.7663 41.2545 50.5543 41.1667 50.3333 41.1667Z"
+                      fill="#1E222E" />
+                    <defs>
+                      <filter id="filter0_d_2_440" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset dx="2" dy="2" />
+                        <feGaussianBlur stdDeviation="10" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix type="matrix"
+                          values="0 0 0 0 0.0646285 0 0 0 0 0.101353 0 0 0 0 0.231559 0 0 0 0.1 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_440" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_440" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="password-reset shadow-box login" style="display: none;">
+            <div class="password-reset__wrapper padding">
+              <h2 class="password-reset__title">Відновлення логіна</h2>
+
+              <label class="login-reset__field input-field">
+                <fieldset class="input-field__fieldset">
+                  <legend class="input-field__legend">Email</legend>
+                  <input class="input-field__input" type="text">
+                </fieldset>
+              </label>
+              <p class="login-reset__text">
+                Введіть електронну пошту, яку ви використовували при реєстрації. Ми надішлемо вам інформацію про ваш
+                логін.
+              </p>
+              <button class="btn btn--full btn--rounded btn--secondary btn--disabled">Надіслати посилання</button>
+              <div class="login-help__icon-button">
+                <a href="#">
+                  <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_2_440)">
+                      <circle cx="42" cy="42" r="24" fill="white" />
+                    </g>
+                    <path
+                      d="M50.3333 41.1667H35.6783L40.0892 36.7559C40.1687 36.679 40.2322 36.587 40.2759 36.4854C40.3196 36.3837 40.3426 36.2743 40.3435 36.1637C40.3445 36.053 40.3234 35.9433 40.2815 35.8409C40.2396 35.7385 40.1777 35.6454 40.0995 35.5672C40.0212 35.489 39.9282 35.4271 39.8258 35.3852C39.7234 35.3433 39.6136 35.3222 39.503 35.3232C39.3923 35.3241 39.283 35.3471 39.1813 35.3908C39.0796 35.4345 38.9877 35.4979 38.9108 35.5775L33.0775 41.4109C32.9213 41.5671 32.8335 41.7791 32.8335 42C32.8335 42.221 32.9213 42.4329 33.0775 42.5892L38.9108 48.4225C39.068 48.5743 39.2785 48.6583 39.497 48.6564C39.7155 48.6545 39.9245 48.5669 40.079 48.4124C40.2335 48.2579 40.3211 48.0489 40.323 47.8304C40.3249 47.6119 40.2409 47.4014 40.0892 47.2442L35.6783 42.8334H50.3333C50.5543 42.8334 50.7663 42.7456 50.9226 42.5893C51.0789 42.433 51.1667 42.221 51.1667 42C51.1667 41.779 51.0789 41.5671 50.9226 41.4108C50.7663 41.2545 50.5543 41.1667 50.3333 41.1667Z"
+                      fill="#1E222E" />
+                    <defs>
+                      <filter id="filter0_d_2_440" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset dx="2" dy="2" />
+                        <feGaussianBlur stdDeviation="10" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix type="matrix"
+                          values="0 0 0 0 0.0646285 0 0 0 0 0.101353 0 0 0 0 0.231559 0 0 0 0.1 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_440" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_440" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart shadow-box ">
+        <div class="cart__header">
+          <button class="cart__btn cart__btn--back">
+            <svg class="icon icon--back" width="20" height="20" aria-hidden="true">
+              <use href="public/images/symbol-defs.svg#icon-increase"></use>
+            </svg>
+          </button>
+          <h2 class="cart__title">Кошик</h2>
+          <button class="cart__btn cart__btn--close">
+            <svg class="icon icon--close" width="20" height="20" aria-hidden="true">
+              <use href="public/images/symbol-defs.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="cart__main">
+          <ul class="cart-items">
+          </ul>
+        </div>
+        <div class="cart__footer shadow-box ">
+          <div class="line-item">
+            <span class="line-item__label">Разом:</span>
+            <span class="line-item__value"></span>
+          </div>
+          <div class="line-item">
+            <span class="line-item__label">Податок 5%:</span>
+            <span class="line-item__value"></span>
+          </div>
+          <button class="btn btn btn--order">
+            Оформити замовлення
+            <svg class="icon-left-arrow cart__left-arrow" width="20" height="20" aria-hidden="true">
+              <use href="public/images/symbol-defs.svg#icon-left-arrow"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- _____________Кошик порожній____________ -->
+      <div class="cart-empty shadow-box ">
+        <div class="cart-empty__block">
+          <div class="icon-close-wrapper icon-wrapper--absolute">
+            <svg class="icon-close" width="20" height="20" aria-hidden="true">
+              <use href="public/images/symbol-defs.svg#icon-close"></use>
+            </svg>
+          </div>
+          <img src="public/images/icon-basket-load2.png" alt="" class="cart-empty__image">
+          <h2 class="cart-empty__title">Кошик порожній</h2>
+          <p class="cart-empty__text">Але це ніколи не пізно виправити :)</p>
+        </div>
       </div>
     </main>
   </div>
@@ -87,7 +529,7 @@
           <svg class="logo-icon" width="41" height="36" aria-hidden="true">
             <use href="public/images/sprite.svg#logo-icon"></use>
           </svg>
-          <span class="logo__text">Logo</span>
+          <span class="logo__text">ITShop</span>
         </a>
         <nav class="footer__nav">
           <ul class="footer__nav-list">
@@ -102,29 +544,46 @@
         <span class="footer__copyright">© 2025 EATLY All Rights Reserved.</span>
 
         <ul class="footer__social">
-          <li class="footer__social-item"><a href="#" class="footer__social-link">
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link">
               <svg class="instagram-icon" width="22" height="22" aria-hidden="true">
                 <use href="public/images/sprite.svg#instagram-icon"></use>
               </svg>
             </a>
           </li>
-          <li class="footer__social-item"><a href="#" class="footer__social-link"><svg class="instagram-icon" width="22"
-                height="22" aria-hidden="true">
-                <use href="public/images/sprite.svg#instagram-icon"></use>
-              </svg></a></li>
-          <li class="footer__social-item"><a href="#" class="footer__social-link"><svg class="instagram-icon" width="22"
-                height="22" aria-hidden="true">
-                <use href="public/images/sprite.svg#instagram-icon"></use>
-              </svg></a></li>
-          <li class="footer__social-item"><a href="#" class="footer__social-link"><svg class="instagram-icon" width="22"
-                height="22" aria-hidden="true">
-                <use href="public/images/sprite.svg#instagram-icon"></use>
-              </svg></a></li>
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link">
+              <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M21.176 12.299V20.064H16.61V12.8091C16.61 10.9954 15.9822 9.74848 14.327 9.74848C13.0713 9.74848 12.3293 10.5987 11.9869 11.3922C11.8727 11.6755 11.8156 12.0723 11.8156 12.469V20.064H7.24962C7.24962 20.064 7.30669 7.76473 7.24962 6.51781H11.8156V8.44487C11.8156 8.44487 11.8156 8.50154 11.7586 8.50154H11.8156V8.44487C12.4435 7.53802 13.4708 6.17773 15.9251 6.17773C18.893 6.17773 21.176 8.16148 21.176 12.299ZM2.56839 0C1.02736 0 0 1.02021 0 2.32382C0 3.62742 0.970283 4.64765 2.51132 4.64765H2.56839C4.16651 4.64765 5.13679 3.62743 5.13679 2.32382C5.07971 1.02021 4.10943 0 2.56839 0ZM0.229382 20.0642H4.73834V6.51807H0.229382V20.0642Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item"><a href="#" class="footer__social-link">
+              <svg width="10" height="22" viewBox="0 0 10 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M9.44568 10.5139H6.48743V21.0278H2.07598V12.2341V10.5139H0V6.80312H2.07598V4.3808C2.07598 2.68002 2.90637 0 6.48743 0H9.75708V3.60771H7.42161C7.05832 3.60771 6.48743 3.81387 6.48743 4.63849V6.80312H9.80898L9.44568 10.5139Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a href="#" class="footer__social-link">
+              <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M21.175 2.02855C20.3778 2.37489 19.5806 2.62228 18.6838 2.72123C19.5806 2.17699 20.2782 1.33588 20.5771 0.346339C19.7301 0.841108 18.7835 1.18744 17.8368 1.38535C17.0396 0.544243 15.8937 0 14.6481 0C12.2566 0 10.3135 1.9296 10.3135 4.30449C10.3135 4.65084 10.3633 4.99717 10.4131 5.29404C6.77599 5.09613 3.58729 3.4139 1.44488 0.791634C1.04629 1.43483 0.846997 2.17699 0.846997 2.96861C0.846997 4.45293 1.59435 5.7888 2.79011 6.58043C2.09258 6.58043 1.39506 6.38253 0.797173 6.03618V6.08566C0.797173 8.1637 2.29188 9.94486 4.28482 10.3407C3.93605 10.4396 3.53747 10.4891 3.13887 10.4891C2.83994 10.4891 2.59082 10.4396 2.3417 10.3902C2.88976 12.1218 4.48412 13.3588 6.42722 13.4082C4.93252 14.5462 3.08905 15.2389 1.04629 15.2389C0.697529 15.2389 0.348767 15.2389 0 15.1894C1.94312 16.4263 4.18517 17.119 6.67634 17.119C14.6979 17.119 19.0326 10.5386 19.0326 4.84874C19.0326 4.65084 19.0326 4.45293 19.0326 4.30449C19.8796 3.6613 20.6269 2.86966 21.175 2.02855Z"
+                  fill="white" />
+              </svg>
+
+
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   </footer>
-  <script type="module" src="/src/main.js"></script>
+  <div class="login login--open"></div>
 </body>
 
 </html>

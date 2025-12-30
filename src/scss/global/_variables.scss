@@ -3,25 +3,27 @@
 // === Базові кольори ===
 $color-black: #000000;
 $color-white: #FFFFFF;
-$color-blue: #476BF0;       // для посилань
-$color-purple: #9D1881;     // відвідані посилання
-$color-teal: #66A5AD;       // фільтри, hover
-$color-green: #003B46;      // активні кнопки, чекбокси
-$color-red: #F6514B;        // не відмічені поля
+$color-blue: #476BF0; // для посилань
+$color-purple: #9D1881; // відвідані посилання
+$color-teal: #66A5AD; // фільтри, hover
+$color-green: #003B46; // активні кнопки, чекбокси
+$color-orange: #FE5F00; // не відмічені поля
 $color-gray-light: #F5F5F5; // фон неактивних блоків
 $color-gray-lighter: #F9F9F9; // фон кнопки пошуку
-$color-gray-pale: #F9C4C2;  // фон не відмічених полів
+$color-gray-pale: #F9C4C2; // фон не відмічених полів
 $color-gray-border: #E2E4E8; // рамка за замовчуванням
 $color-gray-disabled: #DBDFEB; // фон неактивної кнопки
 $color-gray-disabled-text: #777C9B; // текст неактивної кнопки
-
+$color-gray-steel: #8F939F;
+$color-teal-dark: #07575B;
+$color-teal-dark2: #EDEDED;
 // === Кольори тексту ===
 $color-text-black: $color-black;
 $color-text-white: $color-white;
 $color-text-link: $color-blue;
 $color-text-link-visited: $color-purple;
 $color-text-filter: $color-teal;
-
+$color-gray-text-secondary: $color-gray-steel;
 // === Кольори фону ===
 $color-bg-body: $color-white;
 $color-bg-button-search: $color-gray-lighter;
@@ -33,8 +35,10 @@ $color-bg-button-active: $color-green; // активні кнопки та че�
 $color-border-field: $color-green;
 $color-border: $color-teal;
 $color-border-default: $color-gray-border;
+$color-border-counter: $color-orange;
 
 // === Стан кнопок ===
+$color-button-default: $color-teal-dark;
 $color-button-hover: $color-green;
 $color-button-focus: $color-green;
 $color-button-disabled-bg: $color-gray-disabled;

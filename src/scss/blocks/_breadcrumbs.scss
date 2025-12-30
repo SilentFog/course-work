@@ -1,0 +1,51 @@
+.breadcrumbs {
+  font-size: 14px;
+  color: #003B46;
+  margin-bottom: 20px;
+
+  &__list {
+    display: flex;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child)::after {
+      content: "/";
+      margin: 0 5px;
+      color: #777C9B;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #003B46;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--home {
+      padding: 2px; 
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  &__current {
+    font-weight: bold;
+    color: #003B46;
+  }
+}

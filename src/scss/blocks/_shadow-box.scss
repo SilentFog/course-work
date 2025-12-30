@@ -1,0 +1,8 @@
+.shadow-box {
+      box-shadow: 0 0 40px $color-border-field;
+
+      &--rounded {
+            border-radius: 30px;
+            box-shadow: 0 0 15px $color-border-field;
+      }
+}

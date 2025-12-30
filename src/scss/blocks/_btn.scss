@@ -1,0 +1,172 @@
+/* ==========================
+   Базовый класс кнопки
+========================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    gap: 8px;
+
+
+    &:hover {
+        background-color: $color-button-hover;
+        box-shadow: 0 0 7px $color-teal-dark;
+    }
+
+    /* Фокус */
+    &:focus {   
+        outline: none;
+        background-color: $color-button-focus;
+        box-shadow: 0 0 7px $color-teal-dark;
+    }
+
+
+    /* ==========================
+     Размер / ширина
+  ========================== */
+    &--full {
+        width: 100%;
+        padding: 14px 0;
+    }
+
+    &--norm {
+        padding: 9px 15px;
+    }
+
+    /* ==========================
+     Закругления
+  ========================== */
+    &--rounded {
+        border-radius: 50px;
+    }
+
+    &--half {
+        border-radius: 15px;
+    }
+
+
+    /* ==========================
+     Цветовая схема
+  ========================== */
+    &--primary {
+        background-color: $color-button-default;
+        color: #fff;
+
+
+    }
+
+    &--secondary {
+        background-color: #F9F9F9;
+        color: #003B46;
+
+        &:hover {
+            background-color: #E8F3F5;
+        }
+    }
+
+
+    &--card-login {
+        height: 100%;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        background-color: $color-green;
+
+    }
+
+
+    /* ==========================
+     Иконки
+  ========================== */
+    &--icon {
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+    }
+
+    /* ==========================
+     Размер текста
+  ========================== */
+
+
+    /* ==========================
+     Дополнительные состояния
+  ========================== */
+
+    &--disabled {
+        background-color: $color-button-disabled-bg;
+        color: $color-button-disabled-text;
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0.4;
+    }
+
+    &--order {
+        margin-top: 25px;
+        width: 100%;
+        padding: 16px 0;
+        font-size: 18px;
+        border-radius: 18px;
+        background-color: $color-button-default;
+        color: white;
+        gap: 10px;
+
+    }
+    &--add-to-cart {
+        margin-top: 0px;
+        width: 100%;
+        padding: 20px 0;
+        font-size: 20px;
+        border-radius: 18px;
+        background-color: $color-button-default;
+        color: white;
+        gap: 10px;
+
+    }
+
+
+
+    &--pagination {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: #fff;
+        border: 1px solid #66A5AD;
+        padding: 0;
+        gap: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 7px;
+            height: 12px;
+            fill: #003B46;
+            transition: 0.2s;
+        }
+
+        &:hover:not(.btn--disabled) {
+            background: #E8F3F5;
+        }
+    }
+
+    &--pagination-active {
+        background-color: $color-button-default;
+        border-color: $color-button-default;
+        color: white;
+
+        svg {
+            fill: white;
+        }
+    }
+}

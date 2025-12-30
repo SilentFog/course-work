@@ -1,10 +1,10 @@
 /* Global */
 /* ------------------------------------ */
+@import "global/_visually-hidden";
 @import "global/_variables";
 @import "global/fonts";
 @import "global/_reboot";
 @import "global/_container";
-@import "global/_visually-hidden";
 @import "global/_normalize";
 
 /* Blocks */
@@ -14,3 +14,33 @@
 @import "blocks/_header";
 @import "blocks/_slides";
 @import "blocks/_footer";
+@import "blocks/login-help";
+@import "blocks/shadow-box";
+@import "blocks/radio";
+@import "blocks/password-reset";
+@import "blocks/_input-field";
+@import "blocks/auth";
+@import "blocks/_auth-form";
+@import "blocks/_cart-empty";
+@import "blocks/_cart";
+@import "blocks/_line-item";
+@import "blocks/_cart-items";
+@import "blocks/_counter";
+@import "blocks/_order-container";
+@import "blocks/_order-page";
+@import "blocks/_order-block";
+@import "blocks/delivery-time";
+@import "blocks/profile-menu";
+@import "blocks/btn";
+@import "blocks/_breadcrumbs";
+@import "blocks/_sort";
+@import "blocks/_categories";
+@import "blocks/_filter";
+@import "blocks/_custom-checkbox";
+@import "blocks/_product-card";
+@import "blocks/_paginatio";
+@import "blocks/_icons";
+@import "blocks/_product-page";
+@import "blocks/_skeleton-box";
+@import "blocks/_swiper";
+@import "blocks/_profile-main";

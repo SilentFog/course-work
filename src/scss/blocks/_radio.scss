@@ -1,0 +1,42 @@
+.radio {
+    display: inline-flex;  
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    gap: 12px; 
+
+    &__input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(100%);
+        white-space: nowrap;
+    }
+
+    &__choice {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #CDCFDE;
+        border-radius: 50%;
+        flex-shrink: 0;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    &__input:checked + &__choice::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow:
+            0 0 0 6px $color-button-focus,
+            0 0 10px 5px $color-border-field;
+    }
+}

@@ -1,0 +1,23 @@
+  .counter {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      &__btn {
+          width: 28px;
+          height: 28px;
+          border: 1px solid $color-border-counter;
+          background-color: #fff;
+          cursor: pointer;
+          border-radius: 10px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      &__value {
+          min-width: 20px;
+          text-align: center;
+      }
+  }

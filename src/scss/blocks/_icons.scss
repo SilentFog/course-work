@@ -1,0 +1,32 @@
+.icon-small-arrow--left {
+    transform: rotate(180deg);
+    pointer-events: none;
+}
+
+.basket-icon {
+    &--white {
+        fill: #ffffff;
+    }
+
+    &--black {
+        color: #000000;
+    }
+
+    &--teal {
+        color: #66A5AD;
+    }
+}
+
+.basket-icon {
+    stroke: black;
+}
+
+.basket-icon--white {
+    display: flex;
+    padding: 1px;
+    margin: 3px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}

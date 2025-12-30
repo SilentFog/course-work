@@ -1,26 +1,23 @@
 .logo {
-    display: flex;
-    background-color: $color-green;
-    padding: 10px 35px;
-    gap: 10px;
-    border-radius: 21px;
+  display: flex;
+  background-color: $color-green;
+  padding: 10px 35px;
+  gap: 10px;
+  border-radius: 21px;
 
-    &__text {
-        color: white;
-        font-weight: 500;
-    }
+  &__text {
+    color: white;
+    font-weight: 500;
+  }
 
-    &--footer {
-        background-color: transparent;
-        padding: 0;
-    }
+  &--footer {
+    background-color: transparent;
+    padding: 0;
+  }
 }
 
 .logo-icon {
-    display: block;
-}
-
-.logo-icon {
-    width: 28px;
-    height: 24px;
+  display: block;
+  width: 28px;
+  height: 24px;
 }

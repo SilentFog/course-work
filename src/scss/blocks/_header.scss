@@ -1,64 +1,138 @@
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 45px 0;
+  height: 60px;
+
+  &__control {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 45px 20px;
-    height: 60px;
+    border: 1px solid $color-border;
+    background-color: $color-bg-button-search;
+    border-radius: 15px;
+    padding: 0 16px;
+    gap: 12px;
+    height: 50px;
 
-    &__control {
-        display: flex;
-        align-items: center;
-        border: 1px solid $color-border;
+    &--enter {
+      padding: 14px 32px;
+      gap: 13px;
+      cursor: pointer;
+    }
+
+    &--basket {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+      min-width: max-content;
+
+      &.basket-empty {
+        width: 50px;
         background-color: $color-bg-button-search;
-        border-radius: 15px;
-        padding: 0px 16px;
-        gap: 12px;
-        height: 50px;
-        padding: 0 16px;
-        gap: 12px;
+      }
+
+      &.basket-full {
+        background-color: #E8F3F5;
+        justify-content: space-between;
+        padding: 0 12px;
+        width: auto;
+        min-width: max-content;
+      }
     }
 
-    &__search {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex: 1;
-        margin: 0 30px;
+    &--profile {
+      width: 133px;
+      position: relative;
+      cursor: pointer;
     }
+  }
 
-    &__search-input {
-        border: none;
-        outline: none;
-        font-size: 14px;
-        background: transparent;
-        flex: 1;
-    }
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    margin: 0 30px;
 
-    &__dot {
-        width: 13px;
-        height: 13px;
-        background-color: $color-teal;
-        border-radius: 50%;
+    &-input {
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: transparent;
+      flex: 1;
     }
+  }
 
-    &__actions {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
 
-    &__enter {
-        cursor: pointer;
-        padding: 14px 32px;
-        gap: 13px;
-    }
+  &__dot {
+    width: 13px;
+    height: 13px;
+    background-color: $color-teal;
+    border-radius: 50%;
+  }
 
-    &__basket {
-        cursor: pointer;
-        padding: 17px 19px;
-    }
+  &__control-text {
+    color: $color-text-filter;
+  }
 
-    &__control-text {
-        color: $color-text-filter;
+  &__profile {
+    position: relative;
+    width: 133px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: transparent;
     }
+  }
+}
+
+.basket {
+  &__price {
+    font-weight: 600;
+    color: #003B46;
+    white-space: nowrap;
+  }
+
+  &__divider {
+    color: #003B46;
+    margin: 0 6px;
+  }
+
+  &__count {
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 15px;
+    height: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    background: $color-teal-dark;
+    border-radius: 50%;
+  }
+}
+
+.basket-icon {
+  display: inline-block;
+}
+
+.hidden {
+  display: none !important;
 }

@@ -1,0 +1,51 @@
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #003B46;
+    position: relative;
+
+    input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+
+        &:checked+.checkbox-box {
+            background-color: #66A5AD;
+            border-color: #66A5AD;
+
+            &::after {
+                display: block;
+            }
+        }
+    }
+
+    .checkbox-box {
+        width: 18px;
+        height: 18px;
+        border: 2px solid $color-text-filter;
+        border-radius: 4px;
+        background-color: #fff;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 4px;
+            top: 0;
+            width: 6px;
+            height: 12px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    .brand-count {
+        font-weight: 400;
+        color: $color-text-filter;
+    }
+}

@@ -1,0 +1,51 @@
+.sort {
+  &__submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 5px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: #F9FAFB;
+    border-radius: 15px;
+    overflow: hidden;
+
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 10;
+
+    .sort__item {
+      padding: 7px 20px;
+      color: #66A5AD;
+
+      &:hover {
+        border: 1px solid #66A5AD;
+        border-radius: 15px;
+        background-color: #E8F3F5;
+        color: #003B46;
+      }
+    }
+  }
+
+  &__item--active:hover {
+    .sort__submenu {
+      transform: scaleY(1);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .categories__list,
+  .sort__list {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}

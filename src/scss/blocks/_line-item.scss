@@ -1,0 +1,27 @@
+.line-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 60%;
+        padding: 0 10px;
+        border-bottom: 2px dashed #003B46;
+        z-index: 0;
+    }
+
+    &__label,
+    &__value {
+        position: relative;
+        background-color: #fff;
+        padding: 0 10px;
+        z-index: 1;
+    }
+}
